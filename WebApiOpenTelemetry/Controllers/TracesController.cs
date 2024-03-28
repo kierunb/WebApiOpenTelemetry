@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using WebApiOpenTelemetry.Services;
 
 namespace WebApiOpenTelemetry.Controllers;
@@ -13,6 +14,7 @@ public class TracesController(
     private readonly ILogger<TracesController> _logger = logger;
     private readonly IHttpClientFactory _httpClientFactory = httpClientFactory;
     private readonly ITestService _testService = testService;
+    private readonly ActivitySource _activitySource;
 
     [HttpGet]
     public IActionResult Get()

@@ -8,6 +8,7 @@ public partial class LoggingController(ILogger<LoggingController> logger) : Cont
 {
     private readonly ILogger<LoggingController> _logger = logger;
 
+
     [HttpGet]
     public IActionResult Get()
     {
